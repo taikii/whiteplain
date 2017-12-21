@@ -1,0 +1,12 @@
+
+<header class="site-header">
+  <nav class="site-navi">
+    <h1 class="site-title"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
+    <ul class="site-navi-items">
+      {{- range .Site.Menus.main }}
+      <li class="site-navi-item-{{ .Identifier }}"><a href="{{ .URL | safeURL }}" title="{{ .Name }}">{{ .Name }}</a></li>
+      {{- end }}
+    </ul>
+  </nav>
+</header>
+<hr class="site-header-bottom">

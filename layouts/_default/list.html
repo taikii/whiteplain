@@ -1,0 +1,66 @@
+
+{{ define "main" }}
+  {{- if eq .Kind "taxonomy" }}
+  <div class="breadcrumb">
+    <a href="{{ "/" | relURL }}{{ .Data.Plural | urlize }}/">{{ .Data.Plural | humanize }}</a> / {{ .Data.Term | humanize }}
+  </div>
+  {{- else if eq .Kind "section" }}
+  <div class="breadcrumb">
+    {{ .Title }}
+  </div>
+  {{- end }}
+  <div class="main" role="main">
+    <section class="list {{ .Kind }}-list">
+      {{- $paginator := .Paginator }}
+      {{- range $paginator.Pages }}
+      <article class="article">
+        <a href="{{ .Permalink }}" class="article-titles">
+          <h2 class="article-title">{{ .Title }}</h2>
+          {{ with .Params.subtitle }}<h3 class="article-subtitle">{{ . }}</h3>{{ end }}
+        </a>
+        <div class="article-meta">
+          <time class="article-date">{{ .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time>
+          {{- if .Params.categories }}
+          <ul class="article-categories">
+            {{- range .Params.categories }}
+            <li>
+              <a href="{{ "/" | relURL }}categories/{{ . | urlize }}/">
+                <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#folder"></use></svg>
+                {{ . }}
+              </a>&nbsp;
+            </li>
+            {{- end }}
+          </ul>
+          {{- end }}
+          {{- if .Params.tags }}
+          <ul class="article-tags">
+            {{- range .Params.tags }}
+            <li>
+              <a href="{{ "/" | relURL }}tags/{{ . | urlize }}/">
+                <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#tag"></use></svg>
+                {{ . }}
+              </a>&nbsp;
+            </li>
+            {{- end }}
+          </ul>
+          {{- end }}
+        </div>
+        {{- if .Params.image }}
+        <a href="{{ .Permalink }}"><img src="{{ .Params.image }}" class="article-image" /></a>
+        {{- end }}
+        <div class="article-content">
+          {{- if .Truncated }}
+          {{ .Summary }}
+          {{- else }}
+          {{ .Content }}
+          {{- end }}
+        </div>
+        <div class="article-readmore"><a href="{{ .Permalink }}">Read more...</a></div>
+        <div class="article-floatclear"></div>
+      </article>
+      {{- end }}
+    </section>
+    {{ template "_internal/pagination.html" . }}
+  </div>
+
+{{ end }}

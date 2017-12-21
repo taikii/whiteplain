@@ -1,0 +1,22 @@
+
+<div class="site-footer">
+  <div class="copyright">{{ .Site.Copyright | safeHTML }}</div>
+  <ul class="site-footer-items">
+    {{- if .RSSLink }}
+    <li class="site-footer-item-rsslink">
+      <a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank" title="RSS">
+        <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#rss"></use></svg>
+      </a>
+    </li>
+    {{- end }}
+    {{- range .Site.Menus.footer }}
+    <li class="site-footer-item-{{ .Identifier }}"><a href="{{ .URL | safeURL }}" title="{{ .Name }}">{{ .Name }}</a></li>
+    {{- end }}
+  </ul>
+  <div class="powerdby">
+    Powered by <a href="https://themes.gohugo.io/">Hugo</a>
+  </div>
+</div>
+<script src="{{ "js/script.js" | absURL }}"></script>
+<script src="{{ "js/custom.js" | absURL }}"></script>
+{{ template "_internal/google_analytics.html" . }}

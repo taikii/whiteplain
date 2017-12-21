@@ -1,0 +1,12 @@
+name = "Whiteplain"
+license = "MIT"
+licenselink = "https://github.com/taikii/whiteplain/blob/master/LICENSE"
+description = "Simple and functional theme for Hugo"
+homepage = "https://github.com/taikii/whiteplain"
+tags = ["blog", "white", "simple"]
+features = ["blog", "white", "simple"]
+min_version = "0.30"
+
+[author]
+  name = "Taiki IKEGAME"
+  homepage = "http://taikii.github.io/"

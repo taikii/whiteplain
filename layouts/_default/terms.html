@@ -1,0 +1,19 @@
+
+{{ define "main" }}
+  {{ $data := .Data }}
+  <div class="breadcrumb">
+    {{ $data.Plural | humanize }}
+  </div>
+  <div class="main" role="main">
+    <section class="terms">
+      <ul>
+        {{- range .Data.Terms.Alphabetical }}
+        <li>
+          <a href="{{ "/" | relURL }}{{ $data.Plural | urlize }}/{{ .Name | urlize }}/">{{ .Name | humanize }}({{ .Count }})</a>
+          <time>{{((index .Pages.ByDate.Reverse 0).Date.Format (default "January 2, 2006" $.Site.Params.dateFormat))}}</time>
+        </li>
+        {{- end}}
+      </ul>
+    </section>
+  </div>
+{{ end }}

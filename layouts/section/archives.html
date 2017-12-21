@@ -1,0 +1,39 @@
+
+{{ define "main" }}
+  <div class="breadcrumb">
+    Archives
+  </div>
+  <div class="main" role="main">
+    {{ $paginator := .Paginate ((where .Site.Pages "Kind" "page").GroupByDate "2006-01") -}}
+    <section class="archives">
+      <ul>
+        {{- range $paginator.PageGroups }}
+        <li class="archives-month">{{ .Key }}</li>
+        <li class="archives-monthly-container">
+          {{- range .Pages }}
+          <ul>
+            <li class="archives-item">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+              <ul class="taxonomies">
+                {{- if isset .Params "categories" }}
+                {{- range .Params.categories }}
+                <li class="taxonomies-item"><a href="{{ "/" | absURL }}categories/{{ . | urlize }}/"><svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#folder"></use></svg>{{ . }}</a></li>
+                {{- end }}
+                {{- end }}
+                {{- if isset .Params "tags" }}
+                {{- range .Params.tags }}
+                <li class="taxonomies-item"><a href="{{ "/" | absURL }}tags/{{ . | urlize }}/"><svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#tag"></use></svg>{{ . }}</a></li>
+                {{- end }}
+                {{- end }}
+              </ul>
+              <time>{{ .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time>
+            </li>
+          </ul>
+          {{- end }}
+        </li>
+        {{- end }}
+      </ul>
+    </section>
+    {{ template "_internal/pagination.html" . }}
+  </div>
+{{ end }}

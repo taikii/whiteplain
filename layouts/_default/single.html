@@ -1,0 +1,81 @@
+
+{{ define "main" }}
+  <div class="main" role="main">
+    <article class="article">
+      {{ with .Params.image }}<img src="{{ . }}" class="article-image" />{{ end }}
+      {{ with .Params.series }}<p class="article-title-series"><a href="{{ "/" | relURL }}series/{{ index . 0 | urlize }}/">{{ index . 0 }}</a>&nbsp;/</p>{{ end }}
+      <h1 class="article-title">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<h2 class="article-subtitle">{{ . }}</h2>{{ end }}
+      <hr class="article-title-bottom">
+      <div class="article-meta">
+        <time class="article-date">{{ .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time>
+        {{- if .Params.categories }}
+        <ul class="article-categories">
+          {{- range .Params.categories }}
+          <li>
+            <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#folder"></use></svg>
+            <a href="{{ "/" | relURL }}categories/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+          </li>
+          {{- end }}
+        </ul>
+        {{- end }}
+        {{- if .Params.tags }}
+        <ul class="article-tags">
+          {{- range .Params.tags }}
+          <li>
+            <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#tag"></use></svg>
+            <a href="{{ "/" | relURL }}tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+          </li>
+          {{- end }}
+        </ul>
+        {{- end }}
+      </div>
+      {{ partial "toc.html" . }}
+      {{ .Content }}
+    </article>
+
+    {{- if .Params.series }}
+    <section class="article-series">
+      {{- $thispagefilepath := .File.Path }}
+      {{- range .Params.series }}
+      {{- $lseries := replaceRE "( |–)" "-" (lower .) }}
+      <h2 class="series-title"><a href="{{ relURL "/" }}series/{{ . | urlize }}/">Series of : {{ . }}</a></h2>
+      <ol reversed="reversed" class="series">
+      {{- range (index $.Site.Taxonomies.series $lseries).Pages.ByDate.Reverse }}
+      {{- if eq $thispagefilepath .File.Path }}
+        <li class="active">{{ .LinkTitle }}</li>
+      {{- else }}
+        <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+      {{- end }}
+      {{- end }}
+      </ol>
+      {{- end }}
+    </section>
+    {{- end }}
+
+    {{ partial "share.html" . }}
+
+    {{- if and .Site.DisqusShortname (or (not (isset .Params "comments")) (eq .Params.comments nil) .Params.comments) }}
+    <div class="disqus-comments">
+      {{ template "_internal/disqus.html" . }}
+    </div>
+    {{- end }}
+
+    <ul class="pager blog-pager">
+      {{- if .NextInSection }}
+      <li class="pager-newer">
+          <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">&lt; Newer</a>
+      </li>
+      {{- else }}
+      <li class="pager-newer pager-noitem">&lt; Newer</li>
+      {{- end }}
+      {{- if .PrevInSection }}
+      <li class="pager-older">
+        <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">Older &gt;</a>
+      </li>
+      {{- else }}
+      <li class="pager-older pager-noitem">Older &gt;</li>
+      {{- end }}
+    </ul>
+  </div>
+{{ end }}

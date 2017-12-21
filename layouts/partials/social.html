@@ -1,0 +1,101 @@
+
+{{- with .Site.Params.author }}
+  <ul class="author-social">
+    {{- with .twitter }}
+    <li><a href="//twitter.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#twitter"></use></svg></a></li>
+    {{- end }}
+    {{- with .facebook }}
+    <li><a href="//facebook.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#facebook"></use></svg></a></li>
+    {{- end }}
+    {{- with .googleplus }}
+    <li><a href="//plus.google.com/+{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#google-plus"></use></svg></a></li>
+    {{- end }}
+    {{- with .instagram }}
+    <li><a href="//instagram.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#instagram"></use></svg></a></li>
+    {{- end }}
+    {{- with .tumblr }}
+    <li><a href="//{{ . }}.tumblr.com" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#tumblr"></use></svg></a></li>
+    {{- end }}
+    {{- with .flickr }}
+    <li><a href="//flickr.com/photos/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#flickr"></use></svg></a></li>
+    {{- end }}
+    {{- with .reddit }}
+    <li><a href="//reddit.com/user/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#reddit"></use></svg></a></li>
+    {{- end }}
+    {{- with .linkedin }}
+    <li><a href="//linkedin.com/in/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#linkedin"></use></svg></a></li>
+    {{- end }}
+    {{- with .slideshare }}
+    <li><a href="//slideshare.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#slideshare"></use></svg></a></li>
+    {{- end }}
+    {{- with .github }}
+    <li><a href="//github.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#github"></use></svg></a></li>
+    {{- end }}
+    {{- with .gitlab }}
+    <li><a href="//gitlab.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#gitlab"></use></svg></a></li>
+    {{- end }}
+    {{- with .bitbucket }}
+    <li><a href="//bitbucket.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#bitbucket"></use></svg></a></li>
+    {{- end }}
+    {{- with .stackoverflow }}
+    <li><a href="//stackoverflow.com/users/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#stack-overflow"></use></svg></a></li>
+    {{- end }}
+    {{- with .jsfiddle }}
+    <li><a href="//jsfiddle.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#jsfiddle"></use></svg></a></li>
+    {{- end }}
+    {{- with .codepen }}
+    <li><a href="//codepen.io/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#codepen"></use></svg></a></li>
+    {{- end }}
+    {{- with .deviantart }}
+    <li><a href="//{{ . }}.deviantart.com/" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#deviantart"></use></svg></a></li>
+    {{- end }}
+    {{- with .behance }}
+    <li><a href="//behance.net/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#behance"></use></svg></a></li>
+    {{- end }}
+    {{- with .dribbble }}
+    <li><a href="//dribbble.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#dribbble"></use></svg></a></li>
+    {{- end }}
+    {{- with .wordpress }}
+    <li><a href="//{{ . }}.wordpress.com" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#wordpress"></use></svg></a></li>
+    {{- end }}
+    {{- with .medium }}
+    <li><a href="//medium.com/@{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#medium"></use></svg></a></li>
+    {{- end }}
+    {{- with .foursquare }}
+    <li><a href="//foursquare.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#foursquare"></use></svg></a></li>
+    {{- end }}
+    {{- with .xing }}
+    <li><a href="//xing.com/profile/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#xing"></use></svg></a></li>
+    {{- end }}
+    {{- with .quora }}
+    <li><a href="//quora.com/profile/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#quora"></use></svg></a></li>
+    {{- end }}
+    {{- with .youtube }}
+    <li><a href="//youtube.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#youtube"></use></svg></a></li>
+    {{- end }}
+    {{- with .vimeo }}
+    <li><a href="//vimeo.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#vimeo"></use></svg></a></li>
+    {{- end }}
+    {{- with .whatsapp }}
+    <li><a href="//api.whatsapp.com/send?phone={{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#whatsapp"></use></svg></a></li>
+    {{- end }}
+    {{- with .skype }}
+    <li><a href="skype:{{ . }}?userinfo" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#skype"></use></svg></a></li>
+    {{- end }}
+    {{- with .snapchat }}
+    <li><a href="//snapchat.com/add/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#snapchat"></use></svg></a></li>
+    {{- end }}
+    {{- with .pinterest }}
+    <li><a href="//pinterest.com/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#pinterest"></use></svg></a></li>
+    {{- end }}
+    {{- with .telegram }}
+    <li><a href="//telegram.me/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#telegram"></use></svg></a></li>
+    {{- end }}
+    {{- with .vine }}
+    <li><a href="//vine.co/{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-brands.svg" | absURL }}#vine"></use></svg></a></li>
+    {{- end }}
+    {{- with .email }}
+    <li><a href="mailto:{{ . }}" target="_blank"><svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#envelope"></use></svg></a></li>
+    {{- end }}
+  </ul>
+{{- end }}

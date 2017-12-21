@@ -1,0 +1,22 @@
+
+<section class="author">
+  <div class="author-avatar-wrapper">
+    {{- if .Site.Params.author.gravatar }}
+    {{- if in .Site.Params.author.gravatar "@" }}
+    {{- $hash := trim .Site.Params.author.gravatar " " | lower | md5 }}
+    <a href="https://www.gravatar.com/{{ $hash }}">
+      <div style="background-image: url(https://www.gravatar.com/avatar/{{ $hash }}.jpg?s=150);" class="author-avatar"></div>
+    </a>
+    {{- else }}
+    <a href="https://www.gravatar.com/{{ .Site.Params.author.gravatar }}">
+      <div style="background-image: url(https://www.gravatar.com/avatar/{{ .Site.Params.author.gravatar }}.jpg?s=150);" class="author-avatar"></div>
+    </a>
+    {{- end }}
+    {{- else if .Site.Params.author.avatar }}
+    <div style="background-image: url({{ .Site.Params.author.avatar }});" class="author-avatar"></div>
+    {{- else }}
+    <div class="author-avatar"></div>
+    {{- end }}
+  </div>
+  {{ partial "social.html" . }}
+</section>
