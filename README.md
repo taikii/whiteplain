@@ -1,6 +1,7 @@
 # Whiteplain
+This is simple and functional [Hugo](https://gohugo.io/) theme.
 
-This is [Hugo](https://gohugo.io/) theme.
+![](images/tn.png)
 
 ## Installation
 
