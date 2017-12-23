@@ -90,6 +90,7 @@ pre {
 /* Code highlight */
 .highlight pre, .highlight code {
   background-color: inherit;
+  padding: 0;
 }
 
 /* Main contents */
