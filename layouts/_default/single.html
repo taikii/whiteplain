@@ -7,29 +7,29 @@
       <h1 class="article-title">{{ .Title }}</h1>
       {{ with .Params.subtitle }}<h2 class="article-subtitle">{{ . }}</h2>{{ end }}
       <hr class="article-title-bottom">
-      <div class="article-meta">
-        <time class="article-date">{{ .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time>
+      <ul class="article-meta">
+        <li class="article-meta-date"><time>{{ .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time></li>
         {{- if .Params.categories }}
-        <ul class="article-categories">
-          {{- range .Params.categories }}
-          <li>
+        {{- range .Params.categories }}
+        <li class="article-meta-categories">
+          <a href="{{ "/" | relURL }}categories/{{ . | urlize }}/">
             <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#folder"></use></svg>
-            <a href="{{ "/" | relURL }}categories/{{ . | urlize }}/">{{ . }}</a>&nbsp;
-          </li>
-          {{- end }}
-        </ul>
+            {{ . }}
+          </a>&nbsp;
+        </li>
+        {{- end }}
         {{- end }}
         {{- if .Params.tags }}
-        <ul class="article-tags">
-          {{- range .Params.tags }}
-          <li>
+        {{- range .Params.tags }}
+        <li class="article-meta-tags">
+          <a href="{{ "/" | relURL }}tags/{{ . | urlize }}/">
             <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#tag"></use></svg>
-            <a href="{{ "/" | relURL }}tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
-          </li>
-          {{- end }}
-        </ul>
+            {{ . }}
+          </a>&nbsp;
+        </li>
         {{- end }}
-      </div>
+        {{- end }}
+      </ul>
       {{ partial "toc.html" . }}
       {{ .Content }}
     </article>
