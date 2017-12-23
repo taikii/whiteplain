@@ -1,5 +1,6 @@
 
 <section class="author">
+  {{- with .Site.Params.author.name }}<div class="author-name">{{ . }}</div>{{ end }}
   <div class="author-avatar-wrapper">
     {{- if .Site.Params.author.gravatar }}
     {{- if in .Site.Params.author.gravatar "@" }}

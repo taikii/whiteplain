@@ -252,6 +252,11 @@ pre {
 }
 .author {
 }
+.author-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 .author-avatar-wrapper {
   margin-left: auto;
   margin-right: auto;
