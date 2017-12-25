@@ -149,6 +149,7 @@ blockquote blockquote blockquote blockquote {
 }
 .article-image {
   width: 100%;
+  box-sizing: border-box;
 }
 .article-title {
   margin: 0;
@@ -526,6 +527,13 @@ blockquote blockquote blockquote blockquote {
 @media screen and (max-width: 768px) {
   .site-header, .site-header-bottom, .main, .breadcrumb, .site-footer {
     width: 98%;
+    box-sizing: border-box;
+  }
+  .list .article-image {
+    width: 100%;
+    box-sizing: border-box;
+    float: none;
+    margin: 0;
   }
   .toc {
     display: none;
@@ -551,6 +559,7 @@ blockquote blockquote blockquote blockquote {
   }
   .main, .breadcrumb {
     width: 100%;
+    box-sizing: border-box;
   }
   
 }
