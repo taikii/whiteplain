@@ -24,6 +24,22 @@ pre, code {
 pre {
   padding: 4px;
 }
+blockquote {
+  margin: 0;
+  margin-left: 8px;
+  border-left: solid 4px #b4c6c7;
+  font-style: italic;
+  padding-left: 4px;
+}
+blockquote blockquote {
+  border-left-color: #e7c3e5;
+}
+blockquote blockquote blockquote {
+  border-left-color: #c3e7d2;
+}
+blockquote blockquote blockquote blockquote {
+  border-left-color: lightgray;
+}
 
 /* Site header */
 .site-header {
@@ -38,6 +54,7 @@ pre {
   justify-content: flex-end;
   -webkit-align-items: baseline;
   align-items: baseline;
+  padding-bottom: 8px;
 }
 .site-navi a {
   color: inherit;
@@ -72,7 +89,7 @@ pre {
 }
 .site-header-bottom {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -101,6 +118,9 @@ pre {
 }
 
 /* article */
+.article {
+  margin-bottom: 30px;
+}
 .article img {
   border: solid 1px lightgray;
   padding: 4px;
@@ -175,6 +195,7 @@ pre {
   padding-right: 24px;
 }
 .article-series {
+  margin-bottom: 30px;
 }
 .article-series .series-title a {
   color: inherit;
@@ -183,12 +204,12 @@ pre {
   color: inherit;
 }
 .article-series .active {
-  font-weight: bold;
 }
 .article-share {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  margin-bottom: 30px;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: flex-end;
@@ -208,6 +229,11 @@ pre {
   display: inline-block;
   height: 20px;
   overflow: hidden;
+}
+.disqus-comments {
+  margin-bottom: 30px;
+}
+.article-pager {
 }
 
 .toc {

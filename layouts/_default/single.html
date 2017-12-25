@@ -39,7 +39,7 @@
       {{- $thispagefilepath := .File.Path }}
       {{- range .Params.series }}
       {{- $lseries := replaceRE "( |–)" "-" (lower .) }}
-      <h2 class="series-title"><a href="{{ relURL "/" }}series/{{ . | urlize }}/">Series of : {{ . }}</a></h2>
+      <h2 class="series-title"><a href="{{ relURL "/" }}series/{{ . | urlize }}/"><svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#book"></use></svg>&nbsp;{{ . }}</a></h2>
       <ol reversed="reversed" class="series">
       {{- range (index $.Site.Taxonomies.series $lseries).Pages.ByDate.Reverse }}
       {{- if eq $thispagefilepath .File.Path }}
@@ -61,7 +61,7 @@
     </div>
     {{- end }}
 
-    <ul class="pager blog-pager">
+    <ul class="pager article-pager">
       {{- if .NextInSection }}
       <li class="pager-newer">
           <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">&lt; Newer</a>

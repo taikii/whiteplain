@@ -142,6 +142,36 @@ Your site direcctory
         └── custom.js
 ```
 
+### Customize Share Buttons
+1. Copy `themes/whiteplain/layout/partials/share.html` to `layout/partcials/share.html`.
+2. Customize `layout/partcials/share.html`.
+```
+Your site direcctory
+├── layout
+│   └── partials
+│       └── share.html
+└── themes
+    └── whiteplain
+        └── layout
+            └── partials
+                └── share.html
+```
+
+### Customize Author SNS Icons
+1. Copy `themes/whiteplain/layout/partials/social.html` to `layout/partcials/sorcial.html`.
+2. Customize `layout/partcials/social.html`.
+```
+Your site direcctory
+├── layout
+│   └── partials
+│       └── social.html
+└── themes
+    └── whiteplain
+        └── layout
+            └── partials
+                └── social.html
+```
+
 ## Icons
 This theme using [Font Awesome](https://fontawesome.com/).
 
