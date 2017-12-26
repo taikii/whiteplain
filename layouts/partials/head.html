@@ -17,18 +17,18 @@
   {{- end }}
   <meta name="author" content="{{ .Site.Params.author.name }}"/>
   {{- with .Site.Params.favicon }}
-  <link rel='icon' type='image/x-icon' href="{{ . | absURL }}" />
+  <link rel='icon' type='image/x-icon' href="{{ . | relURL }}" />
   {{- end }}
   <meta property="og:site_name" content="{{ .Site.Title }}" />
-  <meta property="og:url" content="{{ .URL | absLangURL }}" />
+  <meta property="og:url" content="{{ .URL | relURL }}" />
   {{- if .IsPage }}
   <meta property="og:type" content="article" />
   {{- else }}
   <meta property="og:type" content="website" />
   {{- end }}
   {{- with default .Params.image | default .Site.Params.logo }}
-  <meta property="og:image" content="{{ . | absURL }}" />
-  <meta name="twitter:image" content="{{ . | absURL }}" />
+  <meta property="og:image" content="{{ . | relURL }}" />
+  <meta name="twitter:image" content="{{ . | relURL }}" />
   {{- end }}
   <meta name="twitter:card" content="summary" />
   {{- with .Site.Params.twitter }}
@@ -37,11 +37,11 @@
   {{- end }}
   {{ .Hugo.Generator }}
   {{- if .RSSLink }}
-  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-  <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+  <link href="{{ .RSSLink | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  <link href="{{ .RSSLink | relURL }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
   {{- end }}
-  <link rel="stylesheet" href="{{ "css/style.css" | absURL }}" media="all" />
-  <link rel="stylesheet" href="{{ "css/syntax.css" | absURL }}" media="all" />
-  <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}" media="all" />
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" media="all" />
+  <link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}" media="all" />
+  <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" media="all" />
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>

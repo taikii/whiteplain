@@ -14,7 +14,7 @@
       {{- $paginator := .Paginator }}
       {{- range $paginator.Pages }}
       <article class="article">
-        <a href="{{ .Permalink }}" class="article-titles">
+        <a href="{{ .Permalink | relURL }}" class="article-titles">
           <h2 class="article-title">{{ .Title }}</h2>
           {{ with .Params.subtitle }}<h3 class="article-subtitle">{{ . }}</h3>{{ end }}
         </a>
@@ -24,7 +24,7 @@
           {{- range .Params.categories }}
           <li class="article-meta-categories">
             <a href="{{ "/" | relURL }}categories/{{ . | urlize }}/">
-              <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#folder"></use></svg>
+              <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | relURL }}#folder"></use></svg>
               {{ . }}
             </a>&nbsp;
           </li>
@@ -34,7 +34,7 @@
           {{- range .Params.tags }}
           <li class="article-meta-tags">
             <a href="{{ "/" | relURL }}tags/{{ . | urlize }}/">
-              <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#tag"></use></svg>
+              <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | relURL }}#tag"></use></svg>
               {{ . }}
             </a>&nbsp;
           </li>
@@ -42,7 +42,7 @@
           {{- end }}
         </ul>
         {{- if .Params.image }}
-        <a href="{{ .Permalink }}"><img src="{{ .Params.image }}" class="article-image" /></a>
+        <a href="{{ .Permalink | relURL }}"><img src="{{ .Params.image }}" class="article-image" /></a>
         {{- end }}
         <div class="article-content">
           {{- if .Truncated }}
@@ -51,7 +51,7 @@
           {{ .Content }}
           {{- end }}
         </div>
-        <div class="article-readmore"><a href="{{ .Permalink }}">Read more...</a></div>
+        <div class="article-readmore"><a href="{{ .Permalink | relURL }}">Read more...</a></div>
         <div class="article-floatclear"></div>
       </article>
       {{- end }}

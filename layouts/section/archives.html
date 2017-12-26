@@ -13,16 +13,16 @@
           {{- range .Pages }}
           <ul>
             <li class="archives-item">
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
+              <a href="{{ .Permalink | relURL }}">{{ .Title }}</a>
               <ul class="taxonomies">
                 {{- if isset .Params "categories" }}
                 {{- range .Params.categories }}
-                <li class="taxonomies-item"><a href="{{ "/" | absURL }}categories/{{ . | urlize }}/"><svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#folder"></use></svg>{{ . }}</a></li>
+                <li class="taxonomies-item"><a href="{{ "/" | relURL }}categories/{{ . | urlize }}/"><svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | relURL }}#folder"></use></svg>{{ . }}</a></li>
                 {{- end }}
                 {{- end }}
                 {{- if isset .Params "tags" }}
                 {{- range .Params.tags }}
-                <li class="taxonomies-item"><a href="{{ "/" | absURL }}tags/{{ . | urlize }}/"><svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#tag"></use></svg>{{ . }}</a></li>
+                <li class="taxonomies-item"><a href="{{ "/" | relURL }}tags/{{ . | urlize }}/"><svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | relURL }}#tag"></use></svg>{{ . }}</a></li>
                 {{- end }}
                 {{- end }}
               </ul>

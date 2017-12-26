@@ -1,4 +1,7 @@
 # Whiteplain
+
+[![CircleCI](https://circleci.com/gh/taikii/whiteplain.svg?style=svg)](https://circleci.com/gh/taikii/whiteplain)
+
 This is simple and functional [Hugo](https://gohugo.io/) theme.
 
 ![](images/tn.png)

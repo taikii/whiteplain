@@ -13,7 +13,7 @@
         {{- range .Params.categories }}
         <li class="article-meta-categories">
           <a href="{{ "/" | relURL }}categories/{{ . | urlize }}/">
-            <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#folder"></use></svg>
+            <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | relURL }}#folder"></use></svg>
             {{ . }}
           </a>&nbsp;
         </li>
@@ -23,7 +23,7 @@
         {{- range .Params.tags }}
         <li class="article-meta-tags">
           <a href="{{ "/" | relURL }}tags/{{ . | urlize }}/">
-            <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#tag"></use></svg>
+            <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | relURL }}#tag"></use></svg>
             {{ . }}
           </a>&nbsp;
         </li>
@@ -39,13 +39,13 @@
       {{- $thispagefilepath := .File.Path }}
       {{- range .Params.series }}
       {{- $lseries := replaceRE "( |–)" "-" (lower .) }}
-      <h2 class="series-title"><a href="{{ relURL "/" }}series/{{ . | urlize }}/"><svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | absURL }}#book"></use></svg>&nbsp;{{ . }}</a></h2>
+      <h2 class="series-title"><a href="{{ "/" | relURL }}series/{{ . | urlize }}/"><svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | relURL }}#book"></use></svg>&nbsp;{{ . }}</a></h2>
       <ol reversed="reversed" class="series">
       {{- range (index $.Site.Taxonomies.series $lseries).Pages.ByDate.Reverse }}
       {{- if eq $thispagefilepath .File.Path }}
         <li class="active">{{ .LinkTitle }}</li>
       {{- else }}
-        <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+        <li><a href="{{ .Permalink | relURL }}">{{ .LinkTitle }}</a></li>
       {{- end }}
       {{- end }}
       </ol>
@@ -64,14 +64,14 @@
     <ul class="pager article-pager">
       {{- if .NextInSection }}
       <li class="pager-newer">
-          <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">&lt; Newer</a>
+          <a href="{{ .NextInSection.Permalink | relURL }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">&lt; Newer</a>
       </li>
       {{- else }}
       <li class="pager-newer pager-noitem">&lt; Newer</li>
       {{- end }}
       {{- if .PrevInSection }}
       <li class="pager-older">
-        <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">Older &gt;</a>
+        <a href="{{ .PrevInSection.Permalink | relURL }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">Older &gt;</a>
       </li>
       {{- else }}
       <li class="pager-older pager-noitem">Older &gt;</li>

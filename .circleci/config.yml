@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: felicianotech/docker-hugo:latest
+    steps:
+      - checkout:
+          path: whiteplain
+      - run: cd whiteplain/exampleSite && hugo
+      - run:
+          name: "Test Website"
+          command: htmlproofer whiteplain/exampleSite/public --allow-hash-href --check-html --empty-alt-ignore  --file-ignore "/\/page\/1\/index.html/"
