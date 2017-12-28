@@ -125,6 +125,7 @@ blockquote blockquote blockquote blockquote {
 /* article */
 .article {
   margin-bottom: 30px;
+  line-height: 150%;
 }
 .article img {
   border: solid 1px lightgray;
