@@ -362,7 +362,7 @@ blockquote blockquote blockquote blockquote {
   color: gray;
 }
 .list .article-meta {
-  margin-top: 0;
+  margin-top: 6px;
   margin-bottom: 15px;
 }
 .list .article-image {
