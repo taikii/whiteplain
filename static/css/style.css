@@ -1,11 +1,10 @@
 a { color: #2060d0; text-decoration: none; }
-a:hover, a:active { color: #5090ff; text-decoration: underline; }
+a:hover, a:active { color: #5090ff; }
 html {
   font-size: 1em;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
-  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   color: #303030;
   overflow-y: scroll;
 }
@@ -26,12 +25,14 @@ pre {
 }
 blockquote {
   margin: 0;
-  margin-left: 8px;
+  margin-left: 40px;
   border-left: solid 4px #b4c6c7;
-  font-style: italic;
-  padding-left: 4px;
+  padding-left: 8px;
+  font-style: normal;
+  color: #7080a0;
 }
 blockquote blockquote {
+  margin-left: 0;
   border-left-color: #e7c3e5;
 }
 blockquote blockquote blockquote {
@@ -60,12 +61,16 @@ blockquote blockquote blockquote blockquote {
   color: inherit;
   text-decoration: none;
 }
+.site-navi a:hover, .site-navi a:active {
+  color: gray;
+}
 .site-title {
   -webkit-flex-grow: 1;
   flex-grow: 1;
   font-size: 2rem;
   margin: 0;
   padding: 0;
+  font-weight: normal;
 }
 .site-navi-items {
   -webkit-flex-grow: 0;
@@ -163,8 +168,11 @@ blockquote blockquote blockquote blockquote {
   margin: 0;
   padding: 0;
 }
-.article-title-series a{
+.article-title-series a {
   color: inherit;
+}
+.article-title-series a:hover, .article-title-series a:active {
+  color: gray;
 }
 .article-title-bottom {
   margin-top: 5px;
@@ -186,6 +194,9 @@ blockquote blockquote blockquote blockquote {
 .article-meta a {
   color: inherit;
 }
+.article-meta a:hover, .article-meta a:active {
+  color: gray;
+}
 .article-meta li {
   padding: 0;
   padding-right: 4px;
@@ -201,8 +212,8 @@ blockquote blockquote blockquote blockquote {
 .article-series .series-title a {
   color: inherit;
 }
-.article-series .series-title a {
-  color: inherit;
+.article-series .series-title a:hover, .article-series .series-title a:active {
+  color: gray;
 }
 .article-series .active {
 }
@@ -347,9 +358,12 @@ blockquote blockquote blockquote blockquote {
 .list .article-titles {
   color: inherit;
 }
+.list .article-titles:hover, .list .article-titles:active {
+  color: gray;
+}
 .list .article-meta {
   margin-top: 0;
-  margin-bottom: 4px;
+  margin-bottom: 15px;
 }
 .list .article-image {
   width: 200px;
@@ -486,8 +500,11 @@ blockquote blockquote blockquote blockquote {
   padding: 0 0 0 8px;
 }
 .archives ul.taxonomies li a {
-  color: #303030;
+  color: inherit;
   font-size: 0.8em;
+}
+.archives ul.taxonomies li a:hover, .archives ul.taxonomies li a:active {
+  color: gray;
 }
 
 .pagination {
@@ -507,7 +524,10 @@ blockquote blockquote blockquote blockquote {
   pointer-events: none;
   cursor: default;
   text-decoration:none;
-  color: #303030;
+  color: inherit;
+}
+.pagination li.active a:hover, .pagination li.active a:active {
+  color: gray;
 }
 
 .icon {
