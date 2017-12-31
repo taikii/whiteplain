@@ -1,12 +1,18 @@
-a { color: #2060d0; text-decoration: none; }
-a:hover, a:active { color: #5090ff; }
 html {
   font-size: 1em;
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
-  color: #303030;
+  color: #444444;
   overflow-y: scroll;
+  line-height: 1.2;
+}
+a {
+  color: #2060d0;
+  text-decoration: none;
+}
+a:hover, a:active {
+  color: #5090ff;
 }
 hr {
   height: 1px;
@@ -69,6 +75,7 @@ blockquote blockquote blockquote blockquote {
   flex-grow: 1;
   font-size: 2rem;
   margin: 0;
+  margin-top: 10px;
   padding: 0;
   font-weight: normal;
 }
@@ -86,6 +93,7 @@ blockquote blockquote blockquote blockquote {
   font-size: 1.2em;
   list-style-type: none;
   margin: 0;
+  margin-top: 10px;
   padding: 0;
 }
 .site-navi-items li {
@@ -124,8 +132,8 @@ blockquote blockquote blockquote blockquote {
 
 /* article */
 .article {
-  margin-bottom: 30px;
-  line-height: 150%;
+  margin-bottom: 40px;
+  line-height: 1.5;
 }
 .article img {
   border: solid 1px lightgray;
@@ -156,6 +164,7 @@ blockquote blockquote blockquote blockquote {
 .article-image {
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 .article-title {
   margin: 0;
@@ -207,8 +216,9 @@ blockquote blockquote blockquote blockquote {
   padding: 0;
   padding-right: 24px;
 }
+
 .article-series {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .article-series .series-title a {
   color: inherit;
@@ -218,11 +228,12 @@ blockquote blockquote blockquote blockquote {
 }
 .article-series .active {
 }
+
 .article-share {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: flex-end;
@@ -243,8 +254,9 @@ blockquote blockquote blockquote blockquote {
   height: 20px;
   overflow: hidden;
 }
+
 .disqus-comments {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .article-pager {
 }
@@ -277,7 +289,7 @@ blockquote blockquote blockquote blockquote {
   justify-content: center;
 }
 .pager-newer {
-  margin-right: 10px;
+  margin-right: 40px;
 }
 .pager-older {
 }
@@ -369,6 +381,7 @@ blockquote blockquote blockquote blockquote {
 .list .article-image {
   width: 200px;
   float: left;
+  margin: 0;
   margin-right: 8px;
 }
 .list .article-content {
@@ -385,7 +398,7 @@ blockquote blockquote blockquote blockquote {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 70px;
   margin-bottom: 20px;
   font-size: 0.8rem;
   display: -webkit-flex;
