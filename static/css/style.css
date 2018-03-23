@@ -136,6 +136,8 @@ blockquote blockquote blockquote blockquote {
   line-height: 1.5;
 }
 .article img {
+  max-width: 100%;
+  box-sizing: border-box;
   border: solid 1px lightgray;
   padding: 4px;
 }
