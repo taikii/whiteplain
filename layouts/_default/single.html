@@ -13,7 +13,7 @@
         {{- range .Params.categories }}
         <li class="article-meta-categories">
           <a href="{{ "/" | relURL }}categories/{{ . | urlize }}/">
-            <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | relURL }}#folder"></use></svg>
+            <i class="fas fa-folder"></i>
             {{ . }}
           </a>&nbsp;
         </li>
@@ -23,7 +23,7 @@
         {{- range .Params.tags }}
         <li class="article-meta-tags">
           <a href="{{ "/" | relURL }}tags/{{ . | urlize }}/">
-            <svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | relURL }}#tag"></use></svg>
+            <i class="fas fa-tag"></i>
             {{ . }}
           </a>&nbsp;
         </li>
@@ -39,7 +39,7 @@
       {{- $thispagefilepath := .File.Path }}
       {{- range .Params.series }}
       {{- $lseries := replaceRE "( |–)" "-" (lower .) }}
-      <h2 class="series-title"><a href="{{ "/" | relURL }}series/{{ . | urlize }}/"><svg class="icon"><use xlink:href="{{ "images/fa-solid.svg" | relURL }}#book"></use></svg>&nbsp;{{ . }}</a></h2>
+      <h2 class="series-title"><a href="{{ "/" | relURL }}series/{{ . | urlize }}/"><i class="fas fa-book"></i>&nbsp;{{ . }}</a></h2>
       <ol reversed="reversed" class="series">
       {{- range (index $.Site.Taxonomies.series $lseries).Pages.ByDate.Reverse }}
       {{- if eq $thispagefilepath .File.Path }}
