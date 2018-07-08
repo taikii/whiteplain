@@ -17,18 +17,18 @@
   {{- end }}
   <meta name="author" content="{{ .Site.Params.author.name }}"/>
   {{- with .Site.Params.favicon }}
-  <link rel='icon' type='image/x-icon' href="{{ . | relURL }}" />
+  <link rel='icon' type='image/x-icon' href="{{ . | absURL }}" />
   {{- end }}
   <meta property="og:site_name" content="{{ .Site.Title }}" />
-  <meta property="og:url" content="{{ .URL | relURL }}" />
+  <meta property="og:url" content="{{ .URL | absURL }}" />
   {{- if .IsPage }}
   <meta property="og:type" content="article" />
   {{- else }}
   <meta property="og:type" content="website" />
   {{- end }}
   {{- with default .Params.image | default .Site.Params.logo }}
-  <meta property="og:image" content="{{ . | relURL }}" />
-  <meta name="twitter:image" content="{{ . | relURL }}" />
+  <meta property="og:image" content="{{ . | absURL }}" />
+  <meta name="twitter:image" content="{{ . | absURL }}" />
   {{- end }}
   <meta name="twitter:card" content="summary" />
   {{- with .Site.Params.twitter }}
