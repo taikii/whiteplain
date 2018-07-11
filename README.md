@@ -146,31 +146,31 @@ Your site direcctory
 ```
 
 ### Customize Share Buttons
-1. Copy `themes/whiteplain/layout/partials/share.html` to `layout/partcials/share.html`.
-2. Customize `layout/partcials/share.html`.
+1. Copy `themes/whiteplain/layouts/partials/share.html` to `layouts/partials/share.html`.
+2. Customize `layouts/partials/share.html`.
 ```
 Your site direcctory
-├── layout
+├── layouts
 │   └── partials
 │       └── share.html
 └── themes
     └── whiteplain
-        └── layout
+        └── layouts
             └── partials
                 └── share.html
 ```
 
 ### Customize Author SNS Icons
-1. Copy `themes/whiteplain/layout/partials/social.html` to `layout/partcials/sorcial.html`.
-2. Customize `layout/partcials/social.html`.
+1. Copy `themes/whiteplain/layouts/partials/social.html` to `layouts/partials/social.html`.
+2. Customize `layouts/partials/social.html`.
 ```
 Your site direcctory
-├── layout
+├── layouts
 │   └── partials
 │       └── social.html
 └── themes
     └── whiteplain
-        └── layout
+        └── layouts
             └── partials
                 └── social.html
 ```
