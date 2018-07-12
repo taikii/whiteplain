@@ -8,5 +8,5 @@ features = ["blog", "white", "simple"]
 min_version = "0.30"
 
 [author]
-  name = "Taiki IKEGAME"
-  homepage = "http://taikii.github.io/"
+  name = "taikii"
+  homepage = "https://taikii.net/"
