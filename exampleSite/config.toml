@@ -1,6 +1,6 @@
 baseurl = "https://example.com/"
 title = "Whiteplain"
-themesDir = "../../"
+# themesDir = "../../"
 theme = "whiteplain"
 languageCode = "ja"
 # Disqus shortname
@@ -14,6 +14,8 @@ pygmentsOptions = "linenos=table"
 copyright = "&copy; Copyright 2017 Foo Bar"
 
 [params]
+  # useCDN = false
+  # showShareIcons = true
   # Date format
   #dateFormat = "January 2, 2006"
 
