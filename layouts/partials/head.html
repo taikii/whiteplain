@@ -40,9 +40,16 @@
   <link href="{{ .RSSLink | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   <link href="{{ .RSSLink | relURL }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
   {{- end }}
+
+  {{- partial "head_custom.html" . }}
+
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" media="all" />
   <link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}" media="all" />
   <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}" media="all" />
+
+  <script src="{{ "js/script.js" | relURL }}"></script>
+  <script src="{{ "js/custom.js" | relURL }}"></script>
+
   {{- if .Site.Params.useCDN | default false }}
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
   {{- else }}

@@ -149,6 +149,8 @@ Your site direcctory
         └── custom.js
 ```
 
+If you want  Angular, React, Vue.js
+
 ### Customize Share Buttons
 1. Copy `themes/whiteplain/layouts/partials/share.html` to `layouts/partials/share.html`.
 2. Customize `layouts/partials/share.html`.
@@ -162,6 +164,14 @@ Your site direcctory
         └── layouts
             └── partials
                 └── share.html
+```
+
+If you want to use libraries and frameworks, create `layouts/partials/head_custom.html`. Its contents are read into `<head>...</head>`.
+```
+Your site direcctory
+├── layouts
+     └── partials
+         └── head_custom.html
 ```
 
 ### Customize Author SNS Icons
