@@ -23,11 +23,13 @@ hr {
 pre, code {
   font-family: monospace, serif;
   background-color: lightgray;
-  padding-left: 4px;
-  padding-right: 4px;
 }
 pre {
   padding: 4px;
+}
+:not(pre) > code {
+  padding-left: 4px;
+  padding-right: 4px;
 }
 blockquote {
   margin: 0;
