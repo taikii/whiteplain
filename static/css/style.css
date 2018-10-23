@@ -21,14 +21,15 @@ hr {
   margin: 0;
 }
 pre, code {
-  font-family: monospace, serif;
-  background-color: lavender;
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+  background-color: #F0F3F3;
 }
 pre {
   padding: 4px 8px;
 }
 :not(pre) > code {
   padding: 2px 4px;
+  margin: 0 2px;
 }
 blockquote {
   margin: 0;
