@@ -302,15 +302,13 @@ blockquote blockquote blockquote blockquote {
 }
 
 /* About */
-.about {
-  text-align: center;
-}
 .author {
 }
 .author-name {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 10px;
+  text-align: center;
 }
 .author-avatar-wrapper {
   margin-left: auto;
@@ -351,17 +349,6 @@ blockquote blockquote blockquote blockquote {
 }
 .author-social a:hover, .author-social a:active {
   color: gray;
-}
-.about ul:not(.author-social)  {
-  margin-left: auto;
-  margin-right: auto;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  align-items: center;
-  padding: 0;
 }
 
 /* List page */
