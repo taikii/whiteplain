@@ -2,14 +2,14 @@
 <div class="site-footer">
   <div class="copyright">{{ .Site.Copyright | safeHTML }}</div>
   <ul class="site-footer-items">
-    {{- if .RelPermalink }}
+    {{- with .OutputFormats.Get "RSS" }}
     <li class="site-footer-item-rsslink">
-      <a href="{{ .RelPermalink | relURL }}" type="application/rss+xml" target="_blank" title="RSS">
+      <a href="{{ .Permalink }}" type="application/rss+xml" target="_blank" title="RSS">
         <i class="fas fa-rss"></i>
       </a>
     </li>
     {{- end }}
-    {{- range .Site.Menus.footer }}
+        {{- range .Site.Menus.footer }}
     <li class="site-footer-item-{{ .Identifier }}"><a href="{{ .URL | safeURL }}" title="{{ .Name }}">{{ .Name }}</a></li>
     {{- end }}
   </ul>

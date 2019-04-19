@@ -37,9 +37,9 @@
   {{- end }}
   {{ hugo.Generator }}
 
-  {{- if .RelPermalink }}
-  <link href="{{ .Permalink | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-  <link href="{{ .Permalink | relURL }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{- with .OutputFormats.Get "RSS" }}
+  <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
   {{- end }}
 
   {{- partial "head_custom.html" . }}
