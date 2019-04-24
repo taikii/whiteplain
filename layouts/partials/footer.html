@@ -4,7 +4,7 @@
   <ul class="site-footer-items">
     {{- with .OutputFormats.Get "RSS" }}
     <li class="site-footer-item-rsslink">
-      <a href="{{ .Permalink }}" type="application/rss+xml" target="_blank" title="RSS">
+      <a href="{{ .RelPermalink }}" type="application/rss+xml" target="_blank" title="RSS">
         <i class="fas fa-rss"></i>
       </a>
     </li>
