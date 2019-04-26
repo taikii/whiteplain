@@ -16,6 +16,10 @@ Or
 $ git submodule add https://github.com/taikii/whiteplain.git themes/whiteplain
 ```
 
+## More colors
+
+* [Dark](https://github.com/taikii/whiteplain-dark)
+
 ## Usage
 
 ### Configration
