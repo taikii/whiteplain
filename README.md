@@ -18,7 +18,10 @@ $ git submodule add https://github.com/taikii/whiteplain.git themes/whiteplain
 
 ## More colors
 
-* [Dark](https://github.com/taikii/whiteplain-dark)
+This theme automatically switches between light and dark styles depending on the OS color scheme. You can fix the light or dark style by adding the following theme.
+
+* [Dark](https://github.com/taikii/whiteplain-dark) Fix in dark style.
+* [Light](https://github.com/taikii/whiteplain-light) Fix in light style.
 
 ## Usage
 

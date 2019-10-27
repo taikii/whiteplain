@@ -1,1 +1,2 @@
-@import url(./syntax-monokailight.css);
+@import url(./syntax-monokailight.css) (prefers-color-scheme: light);
+@import url(./syntax-monokai.css) (prefers-color-scheme: dark);

@@ -1,0 +1,38 @@
+body {
+  color: #e0e0e0;
+  background-color: #202020;
+}
+a {
+  color: #5090ff;
+  text-decoration: none;
+}
+a:hover, a:active {
+  color: #80d0ff;
+}
+pre, code {
+  background-color: inherit;
+}
+.site-navi a:hover, .site-navi a:active {
+  color: white;
+}
+.list .article-titles:hover, .list .article-titles:active {
+  color: white;
+}
+.article-title-series a:hover, .article-title-series a:active {
+  color: white;
+}
+.article-meta a:hover, .article-meta a:active {
+  color: white;
+}
+.article-series .series-title a:hover, .article-series .series-title a:active {
+  color: white;
+}
+.archives .archives-item > a:visited {
+  color: #707070;
+}
+.archives ul.taxonomies li a:hover, .archives ul.taxonomies li a:active {
+  color: white;
+}
+.pagination li.active a:hover, .pagination li.active a:active {
+  color: white;
+}
