@@ -1,7 +1,7 @@
 baseurl = "https://example.com/"
 title = "Whiteplain"
 # themesDir = "../../"
-theme = "whiteplain"
+theme = ["whiteplain"]
 languageCode = "ja"
 # Disqus shortname
 #disqusShortname = ""
