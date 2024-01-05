@@ -1,98 +1,110 @@
 
 {{- with .Site.Params.author }}
   <ul class="author-social">
+    {{- range .social }}
+    <li><a href="{{ .url }}" title="{{ .name }}" rel="me" target="_blank"><i class="{{ .iclass }}"></i></a></li>
+    {{- end }}
+    {{- with .x }}
+    <li><a href="https://x.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+    {{- end }}
     {{- with .twitter }}
-    <li><a href="//twitter.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+    <li><a href="https://twitter.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
     {{- end }}
     {{- with .facebook }}
-    <li><a href="//facebook.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+    <li><a href="https://www.facebook.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
     {{- end }}
     {{- with .googleplus }}
-    <li><a href="//plus.google.com/+{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-google-plus"></i></a></li>
+    <li><a href="https://plus.google.com/+{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-google-plus"></i></a></li>
     {{- end }}
     {{- with .instagram }}
-    <li><a href="//instagram.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+    <li><a href="https://www.instagram.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+    {{- end }}
+    {{- with .threads }}
+    <li><a href="https://www.threads.net/@{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-threads"></i></a></li>
     {{- end }}
     {{- with .tumblr }}
-    <li><a href="//{{ . }}.tumblr.com" rel="me" target="_blank"><i class="fa-brands fa-tumblr"></i></a></li>
+    <li><a href="https://{{ . }}.tumblr.com" rel="me" target="_blank"><i class="fa-brands fa-tumblr"></i></a></li>
     {{- end }}
     {{- with .flickr }}
-    <li><a href="//flickr.com/photos/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-flickr"></i></a></li>
+    <li><a href="https://flickr.com/photos/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-flickr"></i></a></li>
     {{- end }}
     {{- with .reddit }}
-    <li><a href="//reddit.com/user/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-reddit"></i></a></li>
+    <li><a href="https://www.reddit.com/user/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-reddit"></i></a></li>
     {{- end }}
     {{- with .linkedin }}
-    <li><a href="//linkedin.com/in/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
     {{- end }}
     {{- with .slideshare }}
-    <li><a href="//slideshare.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-slideshare"></i></a></li>
+    <li><a href="https://www.slideshare.net/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-slideshare"></i></a></li>
     {{- end }}
     {{- with .github }}
-    <li><a href="//github.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+    <li><a href="https://github.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-github"></i></a></li>
     {{- end }}
     {{- with .gitlab }}
-    <li><a href="//gitlab.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-gitlab"></i></a></li>
+    <li><a href="https://gitlab.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-gitlab"></i></a></li>
     {{- end }}
     {{- with .bitbucket }}
-    <li><a href="//bitbucket.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-bitbucket"></i></a></li>
+    <li><a href="https://bitbucket.org/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-bitbucket"></i></a></li>
     {{- end }}
     {{- with .stackoverflow }}
-    <li><a href="//stackoverflow.com/users/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-stack-overflow"></i></a></li>
+    <li><a href="https://stackoverflow.com/users/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-stack-overflow"></i></a></li>
     {{- end }}
     {{- with .jsfiddle }}
-    <li><a href="//jsfiddle.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-jsfiddle"></i></a></li>
+    <li><a href="https://jsfiddle.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-jsfiddle"></i></a></li>
     {{- end }}
     {{- with .codepen }}
-    <li><a href="//codepen.io/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-codepen"></i></a></li>
+    <li><a href="https://codepen.io/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-codepen"></i></a></li>
     {{- end }}
     {{- with .deviantart }}
-    <li><a href="//{{ . }}.deviantart.com/" rel="me" target="_blank"><i class="fa-brands fa-deviantart"></i></a></li>
+    <li><a href="https://{{ . }}.deviantart.com/" rel="me" target="_blank"><i class="fa-brands fa-deviantart"></i></a></li>
     {{- end }}
     {{- with .behance }}
-    <li><a href="//behance.net/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-behance"></i></a></li>
+    <li><a href="https://behance.net/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-behance"></i></a></li>
     {{- end }}
     {{- with .dribbble }}
-    <li><a href="//dribbble.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
+    <li><a href="https://dribbble.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
     {{- end }}
     {{- with .wordpress }}
-    <li><a href="//{{ . }}.wordpress.com" rel="me" target="_blank"><i class="fa-brands fa-wordpress"></i></a></li>
+    <li><a href="https://{{ . }}.wordpress.com" rel="me" target="_blank"><i class="fa-brands fa-wordpress"></i></a></li>
     {{- end }}
     {{- with .medium }}
-    <li><a href="//medium.com/@{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-medium"></i></a></li>
+    <li><a href="https://medium.com/@{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-medium"></i></a></li>
     {{- end }}
     {{- with .foursquare }}
-    <li><a href="//foursquare.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-foursquare"></i></a></li>
+    <li><a href="https://foursquare.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-foursquare"></i></a></li>
     {{- end }}
     {{- with .xing }}
-    <li><a href="//xing.com/profile/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-xing"></i></a></li>
+    <li><a href="https://xing.com/profile/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-xing"></i></a></li>
     {{- end }}
     {{- with .quora }}
-    <li><a href="//quora.com/profile/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-quora"></i></a></li>
+    <li><a href="https://quora.com/profile/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-quora"></i></a></li>
     {{- end }}
     {{- with .youtube }}
-    <li><a href="//youtube.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+    <li><a href="https://www.youtube.com/user/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+    {{- end }}
+    {{- with .tiktoc }}
+    <li><a href="https://www.tiktok.com/@{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
     {{- end }}
     {{- with .vimeo }}
-    <li><a href="//vimeo.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-vimeo"></i></a></li>
+    <li><a href="https://vimeo.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-vimeo"></i></a></li>
     {{- end }}
     {{- with .whatsapp }}
-    <li><a href="//api.whatsapp.com/send?phone={{ . }}" rel="me" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+    <li><a href="https://api.whatsapp.com/send?phone={{ . }}" rel="me" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
     {{- end }}
     {{- with .skype }}
     <li><a href="skype:{{ . }}?userinfo" target="_blank"><i class="fa-brands fa-skype"></i></a></li>
     {{- end }}
     {{- with .snapchat }}
-    <li><a href="//snapchat.com/add/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-snapchat"></i></a></li>
+    <li><a href="https://snapchat.com/add/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-snapchat"></i></a></li>
     {{- end }}
     {{- with .pinterest }}
-    <li><a href="//pinterest.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-pinterest"></i></a></li>
+    <li><a href="https://pinterest.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-pinterest"></i></a></li>
     {{- end }}
     {{- with .telegram }}
-    <li><a href="//telegram.me/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-telegram"></i></a></li>
+    <li><a href="https://telegram.me/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-telegram"></i></a></li>
     {{- end }}
     {{- with .vine }}
-    <li><a href="//vine.co/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-vine"></i></a></li>
+    <li><a href="https://vine.co/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-vine"></i></a></li>
     {{- end }}
     {{- with .email }}
     <li><a href="mailto:{{ . }}" target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
