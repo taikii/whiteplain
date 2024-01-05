@@ -17,12 +17,12 @@
               <ul class="taxonomies">
                 {{- if isset .Params "categories" }}
                 {{- range .Params.categories }}
-                <li class="taxonomies-item"><a href="{{ "/" | relURL }}categories/{{ . | urlize }}/"><i class="fas fa-folder"></i>{{ . }}</a></li>
+                <li class="taxonomies-item"><a href="{{ "/" | relURL }}categories/{{ . | urlize }}/"><i class="fa-solid fa-folder"></i>{{ . }}</a></li>
                 {{- end }}
                 {{- end }}
                 {{- if isset .Params "tags" }}
                 {{- range .Params.tags }}
-                <li class="taxonomies-item"><a href="{{ "/" | relURL }}tags/{{ . | urlize }}/"><i class="fas fa-tag"></i>{{ . }}</a></li>
+                <li class="taxonomies-item"><a href="{{ "/" | relURL }}tags/{{ . | urlize }}/"><i class="fa-solid fa-tag"></i>{{ . }}</a></li>
                 {{- end }}
                 {{- end }}
               </ul>

@@ -24,7 +24,7 @@
           {{- range .Params.categories }}
           <li class="article-meta-categories">
             <a href="{{ "/" | relURL }}categories/{{ . | urlize }}/">
-              <i class="fas fa-folder"></i>
+              <i class="fa-solid fa-folder"></i>
               {{ . }}
             </a>&nbsp;
           </li>
@@ -34,7 +34,7 @@
           {{- range .Params.tags }}
           <li class="article-meta-tags">
             <a href="{{ "/" | relURL }}tags/{{ . | urlize }}/">
-              <i class="fas fa-tag"></i>
+              <i class="fa-solid fa-tag"></i>
               {{ . }}
             </a>&nbsp;
           </li>
