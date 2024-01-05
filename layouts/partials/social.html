@@ -4,6 +4,9 @@
     {{- range .social }}
     <li><a href="{{ .url }}" title="{{ .name }}" rel="me" target="_blank"><i class="{{ .iclass }}"></i></a></li>
     {{- end }}
+    {{- with .x }}
+    <li><a href="https://x.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+    {{- end }}
     {{- with .twitter }}
     <li><a href="https://twitter.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
     {{- end }}
@@ -15,6 +18,9 @@
     {{- end }}
     {{- with .instagram }}
     <li><a href="https://instagram.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+    {{- end }}
+    {{- with .threads }}
+    <li><a href="https://www.threads.net/@{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-threads"></i></a></li>
     {{- end }}
     {{- with .tumblr }}
     <li><a href="https://{{ . }}.tumblr.com" rel="me" target="_blank"><i class="fa-brands fa-tumblr"></i></a></li>
@@ -75,6 +81,9 @@
     {{- end }}
     {{- with .youtube }}
     <li><a href="https://youtube.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+    {{- end }}
+    {{- with .tiktok }}
+    <li><a href="https://www.tiktok.com/@{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
     {{- end }}
     {{- with .vimeo }}
     <li><a href="https://vimeo.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-vimeo"></i></a></li>
