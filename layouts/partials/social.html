@@ -1,6 +1,9 @@
 
 {{- with .Site.Params.author }}
   <ul class="author-social">
+    {{- range .social }}
+    <li><a href="{{ .url }}" title="{{ .name }}" rel="me" target="_blank"><i class="{{ .iclass }}"></i></a></li>
+    {{- end }}
     {{- with .twitter }}
     <li><a href="//twitter.com/{{ . }}" rel="me" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
     {{- end }}
