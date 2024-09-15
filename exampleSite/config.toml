@@ -1,8 +1,8 @@
-baseurl = "https://example.com/"
-title = "Whiteplain"
+baseURL = 'https://hoo5886.github.io/'
+title = 'My'
 # themesDir = "../../"
 theme = ["whiteplain"]
-languageCode = "ja"
+languageCode = "ko-kr"
 # Disqus shortname
 #disqusShortname = ""
 # google analytics tracking id
