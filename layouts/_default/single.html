@@ -55,7 +55,7 @@
 
     {{ partial "share.html" . }}
 
-    {{- if and .Site.DisqusShortname (or (not (isset .Params "comments")) (eq .Params.comments nil) .Params.comments) }}
+    {{- if and site.Config.Services.Disqus.Shortname (or (not (isset .Params "comments")) (eq .Params.comments nil) .Params.comments) }}
     <div class="disqus-comments">
       {{ template "_internal/disqus.html" . }}
     </div>
