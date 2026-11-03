@@ -42,7 +42,13 @@
           {{- end }}
         </ul>
         {{- if .Params.image }}
+        {{- $img := resources.Get .Params.image }}
+        {{- if $img }}
+        {{- $processed := ($img | images.Filter images.AutoOrient).Resize "300x webp" }}
+        <a href="{{ .Permalink | relURL }}"><img src="{{ $processed.RelPermalink }}" class="article-image" /></a>
+        {{- else }}
         <a href="{{ .Permalink | relURL }}"><img src="{{ .Params.image }}" class="article-image" /></a>
+        {{- end }}
         {{- end }}
         <div class="article-content">
           {{- if .Truncated }}

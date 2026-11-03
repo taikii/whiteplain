@@ -27,8 +27,15 @@
   <meta property="og:type" content="website" />
   {{- end }}
   {{- with default .Params.image | default .Site.Params.logo }}
+  {{- $img := resources.Get . }}
+  {{- if $img }}
+  {{- $processed := $img | images.Filter images.AutoOrient }}
+  <meta property="og:image" content="{{ $processed.Permalink }}" />
+  <meta name="twitter:image" content="{{ $processed.Permalink }}" />
+  {{- else }}
   <meta property="og:image" content="{{ . | absURL }}" />
   <meta name="twitter:image" content="{{ . | absURL }}" />
+  {{- end }}
   {{- end }}
   <meta name="twitter:card" content="summary" />
   {{- with .Site.Params.twitter }}
