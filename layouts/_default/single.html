@@ -2,7 +2,15 @@
 {{ define "main" }}
   <div class="main" role="main">
     <article class="article">
-      {{ with .Params.image }}<img src="{{ . }}" class="article-image" />{{ end }}
+      {{- with .Params.image }}
+      {{- $img := resources.Get . }}
+      {{- if $img }}
+      {{- $processed := $img | images.Filter images.AutoOrient }}
+      <img src="{{ $processed.RelPermalink }}" class="article-image" />
+      {{- else }}
+      <img src="{{ . }}" class="article-image" />
+      {{- end }}
+      {{- end }}
       {{ with .Params.series }}<p class="article-title-series"><a href="{{ "/" | relURL }}series/{{ index . 0 | urlize }}/">{{ index . 0 }}</a>&nbsp;/</p>{{ end }}
       <h1 class="article-title">{{ .Title }}</h1>
       {{ with .Params.subtitle }}<h2 class="article-subtitle">{{ . }}</h2>{{ end }}

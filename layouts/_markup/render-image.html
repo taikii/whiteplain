@@ -1,0 +1,14 @@
+{{- $img := resources.Get .Destination }}
+{{- if $img }}
+{{- $processed := $img | images.Filter images.AutoOrient }}
+<img src="{{ $processed.RelPermalink }}"
+  {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+>
+{{- else }}
+<img src="{{ .Destination | safeURL }}"
+  {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+>
+{{- end }}
+{{- /* chomp trailing newline */ -}}
